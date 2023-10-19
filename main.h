@@ -60,7 +60,7 @@ void pint(stack_t **head, unsigned int line_num);
 void pop(stack_t **head, unsigned int line_num);
 void swap(stack_t **head, unsigned int line_num);
 void add(stack_t **head, unsigned int line_num);
-void nop(void);
+void nop(stack_t **head, unsigned int counter);
 void opcode_operation(char *instruction[], unsigned int line_num);
 void malloc_error(void);
 void stack_empty_error(unsigned int line_num);

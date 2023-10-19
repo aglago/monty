@@ -12,7 +12,7 @@ void ig(void);
 
 int main(int argc, char *argv[])
 {
-	int fd;  
+	int fd;
 	unsigned int line_number = 1;/* LIne number will always start at one*/
 	char *line;/* Initialize a buffer to read lines from the file */
 	ssize_t read_data;

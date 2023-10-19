@@ -3,6 +3,8 @@
 /**
  * pall - prints all elements in stack
  * @head: head / top of the stack
+ * @line_num: the line number
+ * Return: nothing
  */
 void pall(stack_t **head, unsigned int line_num)
 {

@@ -8,24 +8,24 @@
  */
 int add_node(stack_t **head, int data)
 {
-    stack_t *new_node = malloc(sizeof(struct stack_s));
+	stack_t *new_node = malloc(sizeof(struct stack_s));
 
-    if (!new_node)
-    {
-        fprintf(stderr, "Error: malloc failed\n");
-        return (-1);
-    }
+	if (!new_node)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		return (-1);
+	}
 
-    new_node->n = data;
+	new_node->n = data;
 
-    if (*head)
-    {
-        new_node->next = *head;
-        (*head)->prev = new_node;
-    }
+	if (*head)
+	{
+		new_node->next = *head;
+		(*head)->prev = new_node;
+	}
 
-    new_node->prev = NULL;
-    *head = new_node;
+	new_node->prev = NULL;
+	*head = new_node;
 
-    return (0);
+	return (0);
 }

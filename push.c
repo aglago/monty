@@ -4,13 +4,14 @@
  * push - pushed an element to a stack
  * @head: head / top of stack
  * @data: data to push to stack
+ * @line_num: the line number
  */
 void push(stack_t **head, unsigned int line_num, const char *data)
 {
 	int i = 0;
 
 	if (!head)
-    return;
+		return;
 
 	if (data == NULL || *data == '\0')
 		i = -1;

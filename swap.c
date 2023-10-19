@@ -5,32 +5,33 @@
  * @head: head / top of the stack
  * @line_num: line number at which swap was called
  */
-void swap(stack_t **head, unsigned int line_number)
+
+void swap(stack_t **head, unsigned int line_num)
 {
-    stack_t *node = NULL;
+	stack_t *node = NULL;
 
-    if (*head == NULL || (*head)->next == NULL)
-    {
-        fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
-        /* We will write a function to free list here*/
-        exit(EXIT_FAILURE);
-    }
+	if (*head == NULL || (*head)->next == NULL)
+	{
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_num);
+		/* We will write a function to free list here*/
+		exit(EXIT_FAILURE);
+	}
 
-    node = (*head)->next;
+	node = (*head)->next;
 
-    if (node->next != NULL)
-    {
-        (*head)->next = node->next;
-        (*head)->next->prev = *head;
-    }
-    else
-    {
-        node->prev->prev = node;
-        node->prev->next = NULL;
-    }
+	if (node->next != NULL)
+	{
+		(*head)->next = node->next;
+		(*head)->next->prev = *head;
+	}
+	else
+	{
+		node->prev->prev = node;
+		node->prev->next = NULL;
+	}
 
-    node->prev = NULL;
-    node->next = *head;
-    (*head)->prev = node;
-    (*head) = node;
+	node->prev = NULL;
+	node->next = *head;
+	(*head)->prev = node;
+	(*head) = node;
 }
