@@ -44,6 +44,7 @@ void free_dll(stack_t **head)
 	while (*head && (*head)->next)
 	{
 		stack_t *next_node = (*head)->next;
+
 		free(*head);
 		*head = next_node;
 	}
