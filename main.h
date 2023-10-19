@@ -30,9 +30,9 @@ extern int choice; /* To choose either of the 3 stack operations*/
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 
 /**
@@ -45,12 +45,25 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
 /* FUNCTION PROTOTYPES GOES HERE*/
-
+void file_error(char *file);
+int tokenize(char *line, char *instruction[]);
+void instruction_error(int line_num, char *opcode);
+void push(stack_t **head, int data);
+void pall(stack_t *head);
+void pint(stack_t *head, int line_num);
+void pop(stack_t **head, int line_num);
+void swap(stack_t **head, int line_num);
+void add(stack_t **head, int line_num);
+void nop(void);
+void opcode_operation(char *instruction[], int line_num);
+void malloc_error(void);
+void stack_empty_error(int line_num);
+void swap_error(int line_num);
 
 
 #endif
