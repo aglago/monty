@@ -29,3 +29,25 @@ int add_node(stack_t **head, int data)
 
 	return (0);
 }
+
+
+/**
+ * free_dll - frees a doubly linked list
+ * @head: pointer to head of list
+ */
+
+void free_dll(stack_t **head)
+{
+	if (!head)
+		return;
+
+	while (*head && (*head)->next)
+	{
+		stack_t *next_node = (*head)->next;
+		free(*head);
+		*head = next_node;
+	}
+	free(*head);
+	*head = NULL;
+}
+

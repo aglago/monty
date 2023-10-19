@@ -13,7 +13,7 @@ void swap(stack_t **head, unsigned int line_num)
 	if (*head == NULL || (*head)->next == NULL)
 	{
 		fprintf(stderr, "L%u: can't swap, stack too short\n", line_num);
-		/* We will write a function to free list here*/
+		free_dll(head);
 		exit(EXIT_FAILURE);
 	}
 

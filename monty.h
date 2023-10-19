@@ -67,5 +67,6 @@ void stack_empty_error(unsigned int line_num);
 void swap_error(unsigned int line_num);
 void (*operate(char *opcode))(stack_t **stack, unsigned int line_number);
 int add_node(stack_t **head, int data);
+void free_dll(stack_t **head);
 
 #endif

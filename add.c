@@ -21,7 +21,7 @@ void add(stack_t **head, unsigned int line_num)
 
 
 	*head = (*head)->next;
-	/*free(temp);*/
 	(*head)->prev = NULL;
+	free_dll(head);
 }
 

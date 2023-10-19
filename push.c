@@ -31,7 +31,7 @@ void push(stack_t **head, unsigned int line_num, const char *data)
 	if (i == -1 || add_node(head, atoi(data)) == -1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_num);
-		/* A function to free list*/
+		free_dll(head);
 		exit(EXIT_FAILURE);
 	}
 
