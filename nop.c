@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * nop - does nothing
@@ -9,5 +9,5 @@
 void nop(stack_t **head, unsigned int line_num)
 {
 	(void)head;
-	(void)line_num
+	(void)line_num;
 }

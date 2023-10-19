@@ -1,5 +1,5 @@
-#ifndef MONTY_H
-#define MONTY_H
+#ifndef MAIN_H
+#define MAIN_H
 #define SIZE 50 /* Define the size of the stack*/
 
 #include <stdio.h>

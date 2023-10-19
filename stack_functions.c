@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 
 /**
  * operate - a function to select the corresponding operation
