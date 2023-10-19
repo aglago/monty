@@ -1,0 +1,16 @@
+#include "main.h"
+
+/**
+ * pint - prints value at the top of the stack
+ * @head: head / top of the stack
+ * @line_num: line number at stack is empty
+ */
+void pint(stack_t *head, int line_num)
+{
+	if (head == NULL)
+		stack_empty_error(line_num);
+	else
+	{
+		printf("%d\n", head->n);
+	}
+}
