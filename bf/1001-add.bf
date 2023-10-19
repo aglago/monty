@@ -1,12 +1,15 @@
-,       ; Read first digit into the first cell
--       ; Convert ASCII to integer
->++++    ; Move to the second cell and set it to 4 (ASCII value of '4')
-<       ; Move back to the first cell
-++++    ; Add 4 to the first digit
-[       ; Start loop
-    ->- ; Subtract 1 from the first digit and decrement the second digit
-    >>+  ; Move to the third cell and increment it
-    <<   ; Move back to the first and second cells
-    <<<  ; Move back to the first cell
-]       ; End loop
->>.     ; Move to the third cell and print it as an ASCII character
+,>,<[>+<-]>>+++++++[<------->-]<+.>>>++++++++++
+
+,                a0 add x  getchar()     Only reads the first character
+>,               a1 add x  getchar()     Only reads the second character
+<                a0
+[                start loop
+>+               a1 add 1
+<-               a0 sub 1
+]                end loop
+>>+++ ++++       a2 add 7                a2 set loop to 7
+[                start loop
+<--- ----        a1 sub 7                a1 subtracts by 7 each time
+>-               a2 sub 1                a2 decrements by 1 until nothing left
+]                end loop
+<+.              a1 add 1  Print         To get to 50
