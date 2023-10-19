@@ -3,6 +3,6 @@
 /**
  * nop - does nothing
  */
-void nop(void)
+/*void nop(void)
 {
-}
+}*/

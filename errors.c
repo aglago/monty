@@ -4,7 +4,7 @@
  * swap_error - error message for if swapping fails
  * @line_num: line number at which swapping failed
  */
-void swap_error(int line_num)
+void swap_error(unsigned int line_num)
 {
 	char int_to_string[10];
 	char err_msg[256] = "L";
@@ -23,7 +23,7 @@ void swap_error(int line_num)
  * stack is empty
  * @line_num: line number at which stack was empty
  */
-void stack_empty_error(int line_num)
+void stack_empty_error(unsigned int line_num)
 {
 	char int_to_string[10];
 	char err_msg[256] = "L";

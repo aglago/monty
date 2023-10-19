@@ -8,7 +8,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include <string.h>
-
+#include <ctype.h>
 
 /* Global declaration of variables for testing */
 
@@ -50,20 +50,22 @@ typedef struct instruction_s
 } instruction_t;
 
 /* FUNCTION PROTOTYPES GOES HERE*/
+
 void file_error(char *file);
 int tokenize(char *line, char *instruction[]);
-void instruction_error(int line_num, char *opcode);
-void push(stack_t **head, int data);
-void pall(stack_t *head);
-void pint(stack_t *head, int line_num);
-void pop(stack_t **head, int line_num);
-void swap(stack_t **head, int line_num);
-void add(stack_t **head, int line_num);
+void instruction_error(unsigned int line_num, char *opcode);
+void push(stack_t **head, unsigned int line_num, const char *data);
+void pall(stack_t **head, unsigned int line_num);
+void pint(stack_t **head, unsigned int line_num);
+void pop(stack_t **head, unsigned int line_num);
+void swap(stack_t **head, unsigned int line_num);
+void add(stack_t **head, unsigned int line_num);
 void nop(void);
-void opcode_operation(char *instruction[], int line_num);
+void opcode_operation(char *instruction[], unsigned int line_num);
 void malloc_error(void);
-void stack_empty_error(int line_num);
-void swap_error(int line_num);
-
+void stack_empty_error(unsigned int line_num);
+void swap_error(unsigned int line_num);
+void (*operate(char *opcode))(stack_t **stack, unsigned int line_number);
+int add_node(stack_t **head, int data);
 
 #endif

@@ -5,28 +5,33 @@
  * @head: head / top of stack
  * @data: data to push to stack
  */
-void push(stack_t **head, int data)
+void push(stack_t **head, unsigned int line_num, const char *data)
 {
-	stack_t *node = malloc(sizeof(stack_t));
+	int i = 0;
 
-	if (node == NULL)
-		malloc_error(); /* stack full */
-	else
+	if (!head)
+    return;
+
+	if (data == NULL || *data == '\0')
+		i = -1;
+	else if (data[i] == '-' || data[i] == '+')
+		i++;
+
+	while (data[i] != '\0')
 	{
-		node->n = data;
-
-		if ((*head) == NULL)
+		if (!isdigit(data[i]))
 		{
-			(*head) = node;
-			node->next = NULL;
-			node->prev = NULL;
+			i = -1;
+			break;
 		}
-		else
-		{
-			node->next = *head;
-			node->prev = NULL;
-			(*head)->prev = node;
-			(*head) = node;
-		}
+		i++;
 	}
+
+	if (i == -1 || add_node(head, atoi(data)) == -1)
+	{
+		fprintf(stderr, "L%u: usage: push integer\n", line_num);
+		/* A function to free list*/
+		exit(EXIT_FAILURE);
+	}
+
 }

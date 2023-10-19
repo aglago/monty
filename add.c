@@ -5,34 +5,23 @@
  * @head: head of the dll
  * @line_num: the line number of the error instruction
  */
-void add(stack_t **head, int line_num)
+
+void add(stack_t **head, unsigned int line_num)
 {
-	stack_t *curr_top = *head;
-	int i = 0;
+	int sum;
 
-	while (curr_top && curr_top->next)
+	if (*head == NULL || (*head)->next == NULL)
 	{
-		i++;
-		curr_top = curr_top->next;
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_num);
+		exit(EXIT_FAILURE);
 	}
-	printf("There are %d nodes in this dll\n", i);
-	if (i < 2)
-		swap_error(line_num);
-	else
-	{
-		int first_data, second_data, sum;
 
-		/*collecting the data in the 2 nodes to be swapped*/
-		curr_top = *head;
-		first_data = curr_top->n;
-		second_data = curr_top->next->n;
-		sum = first_data + second_data;
+	sum = (*head)->n + (*head)->next->n;
+	(*head)->next->n = sum;
 
-		/**
-		 * changing the head position to the element
-		 * before the fist two to be swapped
-		 */
-		*head = (*head)->next->next;
-		push(head, sum);
-	}
+	
+	*head = (*head)->next;
+	/*free(temp);*/
+	(*head)->prev = NULL;
 }
+	
