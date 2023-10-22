@@ -73,5 +73,6 @@ void divide(stack_t **head, unsigned int line_num);
 void mul(stack_t **head, unsigned int line_num);
 void mod(stack_t **head, unsigned int line_num);
 void pchar(stack_t **head, unsigned int line_num);
+void pstr(stack_t **head, unsigned int line_num);
 
 #endif
