@@ -71,5 +71,6 @@ void free_dll(stack_t **head);
 void sub(stack_t **head, unsigned int line_num);
 void divide(stack_t **head, unsigned int line_num);
 void mul(stack_t **head, unsigned int line_num);
+void mod(stack_t **head, unsigned int line_num);
 
 #endif
