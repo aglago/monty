@@ -15,11 +15,12 @@ void (*operate(char *opcode))(stack_t **stack, unsigned int line_number)
 	/* based on the received input, we call for our functions*/
 	instruction_t instruction_s[] = {
 		{"add", add},
-		/*{"nop", nop},*/
+		{"nop", nop},
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 
