@@ -69,7 +69,7 @@ void (*operate(char *opcode))(stack_t **stack, unsigned int line_number);
 int add_node(stack_t **head, int data);
 void free_dll(stack_t **head);
 void sub(stack_t **head, unsigned int line_num);
-void div(stack_t **head, unsigned int line_num);
+void divide(stack_t **head, unsigned int line_num);
 void mul(stack_t **head, unsigned int line_num);
 
 #endif

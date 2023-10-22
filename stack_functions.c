@@ -21,7 +21,7 @@ void (*operate(char *opcode))(stack_t **stack, unsigned int line_number)
 		{"pop", pop},
 		{"swap", swap},
 		{"sub", sub},
-		{"div", div},
+		{"div", divide},
 		{"mul", mul},
 		{NULL, NULL}
 	};
