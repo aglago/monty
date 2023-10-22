@@ -16,15 +16,8 @@ void mul(stack_t **head, unsigned int line_num)
 		exit(EXIT_FAILURE);
 	}
 
-	if ((*head)->n == 0)
-	{
-		fprintf(stderr, "L%u: mulision by zero\n", line_num);
-                exit(EXIT_FAILURE);
-	}
-
 	muli = (*head)->next->n * (*head)->n;
 	(*head)->next->n = muli;
-
 
 	*head = (*head)->next;
 	(*head)->prev = NULL;
