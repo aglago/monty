@@ -14,6 +14,7 @@ void pstr(stack_t **head, unsigned int line_num)
 	if (*head == NULL)
 	{
 		printf("\n");
+		return;
 	}
 
 	while (curr_top)
@@ -22,7 +23,8 @@ void pstr(stack_t **head, unsigned int line_num)
 		{
 			return;
 		}
-		printf("%c\n", curr_top->n);
+		printf("%c", curr_top->n);
 		curr_top = curr_top->next;
 	}
+	printf("\n");
 }
