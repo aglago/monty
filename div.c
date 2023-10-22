@@ -19,7 +19,7 @@ void divide(stack_t **head, unsigned int line_num)
 	if ((*head)->n == 0)
 	{
 		fprintf(stderr, "L%u: divideision by zero\n", line_num);
-                exit(EXIT_FAILURE);
+		exit(EXIT_FAILURE);
 	}
 
 	dividei = (*head)->next->n / (*head)->n;
